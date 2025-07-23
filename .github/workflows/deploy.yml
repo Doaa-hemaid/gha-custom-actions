@@ -10,11 +10,14 @@ jobs:
       - name: Get code
         uses: actions/checkout@v4
       - name: use composite cache & install
+        id: cache-deps
         uses: ./.github/action/cached
         with:
           caching: 'false'
       - name: Lint code
-        run: npm run lint
+        run: |
+          npm run lint
+          echo '${{steps.cache-deps.outputs.caching}}'
   test:
     runs-on: ubuntu-latest
     steps:
