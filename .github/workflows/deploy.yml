@@ -17,7 +17,7 @@ jobs:
       - name: Lint code
         run: |
           npm run lint
-          echo '${{steps.cache-deps.outputs.caching}}'
+          echo '${{steps.cache-deps.outputs.used-cache}}'
   test:
     runs-on: ubuntu-latest
     steps:
