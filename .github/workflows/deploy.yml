@@ -10,7 +10,7 @@ jobs:
       - name: Get code
         uses: actions/checkout@v4
       - name: use composite cache & install
-        uses: ./.github/action/cached
+        uses: .github/action/cached
       - name: Lint code
         run: npm run lint
   test:
